@@ -8,7 +8,7 @@ module.exports = {
     },
 
     discord: {
-        token: 'ODEzODI4MzgwOTM5NzgwMDk3.YDU-vg.qfSwkNk_isKweoKY-HKGNgLO8Ng',
+        token: 'ODEzODI4MzgwOTM5NzgwMDk3.YDU-vg.Y5bZieDbTxnkv4Ar4cpxFs40g_U',
         prefix: 'sc!',
         activity: 'Nhập sc!help để hỗ trợ',
     },
