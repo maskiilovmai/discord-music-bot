@@ -2,12 +2,16 @@ module.exports = (client, message, queue, track) => {
     message.channel.send({
         embed: {
             color: 'BLUE',
-            author: { name: `${track.title} has been added to the queue!` },
-            footer: { text: 'This bot is used as a free to use playing music bot' },
+            author: { name: `Đã thêm bài hát mới vào hàng chờ`},
+            description: "**Bài hát:** ["+track.title+"]("+track.url+")",
+			//footer: { text: 'Sakura được hoạt động với vai trò là BOT phát nhạc miễn phí theo yêu cầu của người dùng' }, //If you want footer, just delete "//"
 
-            timestamp: new Date(),
-            description: 'Duration: ' + track.duration + " minutes, requested by: " + track.requestedBy.username,
+            fields: [
+                { name: 'Thời lượng', value: track.duration + " phút", inline: true },
+                { name: 'Yêu cầu bởi', value: track.requestedBy.username, inline: true },
+             ],
             thumbnail: { url: track.thumbnail },
+            timestamp: new Date(),
         },
     });
 

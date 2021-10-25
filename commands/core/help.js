@@ -12,35 +12,35 @@ module.exports = {
             message.channel.send({
                 embed: {
                     color: 'BLUE',
-                    author: { name: 'Help pannel' },
-                    footer: { text: 'This bot is used as a free to use playing music bot' },
+                    author: { name: 'Help pannel - Bảng hỗ trợ' },
+                    //footer: { text: 'This bot is used as a free to use playing music bot' }, //If you want footer, just delete "//"
                     fields: [
                         { name: 'Bot', value: infos },
-                        { name: 'Music', value: music },
-                        { name: 'Filters', value: client.filters.map((x) => '`' + x + '`').join(', ') },
+                        { name: 'Music - Nhạc', value: music },
+                        { name: 'Filters - Bộ Lọc', value: client.filters.map((x) => '`' + x + '`').join(', ') },
                     ],
                     timestamp: new Date(),
-                    description: `To use filters, ${client.config.discord.prefix}filter (the filter). Example : ${client.config.discord.prefix}filter 8D.`,
+                    description: `Để dụng các filter, ${client.config.discord.prefix}filter (filter). VD : ${client.config.discord.prefix}filter 8D.`,
                 },
             });
         } else {
             const command = message.client.commands.get(args.join(" ").toLowerCase()) || message.client.commands.find(x => x.aliases && x.aliases.includes(args.join(" ").toLowerCase()));
 
-            if (!command) return message.channel.send(`${client.emotes.error} - I did not find this command !`);
+            if (!command) return message.channel.send(`${client.emotes.error} - Tôi không tìm thấy lệnh này !`);
 
             message.channel.send({
                 embed: {
                     color: 'BLUE',
-                    author: { name: 'Help pannel' },
-                    footer: { text: 'This bot is used as a free to use playing music bot' },
+                    author: { name: 'Help pannel - Bảng hỗ trợ' },
+                    //footer: { text: 'This bot is used as a free to use playing music bot' }, //If you want footer, just delete "//"
                     fields: [
-                        { name: 'Name', value: command.name, inline: true },
-                        { name: 'Category', value: command.category, inline: true },
-                        { name: 'Aliase(s)', value: command.aliases.length < 1 ? 'None' : command.aliases.join(', '), inline: true },
-                        { name: 'Utilisation', value: command.utilisation.replace('{prefix}', client.config.discord.prefix), inline: true },
+                        { name: 'Name - Tên', value: command.name, inline: true },
+                        { name: 'Category - Phân loại', value: command.category, inline: true },
+                        { name: 'Aliase(s) - Biệt danh', value: command.aliases.length < 1 ? 'None' : command.aliases.join(', '), inline: true },
+                        { name: 'Utilisation - Cách sử dụng', value: command.utilisation.replace('{prefix}', client.config.discord.prefix), inline: true },
                     ],
                     timestamp: new Date(),
-                    description: 'Find information on the command provided.\nMandatory arguments `[]`, optional arguments `<>`.',
+                    description: 'Tìm thông tin về lệnh được cung cấp.\nĐối với những kiểu lệnh bắt buộc sẽ có dấu `[]`, Đối với những kiểu lệnh tự chọn sẽ có dấu `<>`.',
                 }
             });
         };

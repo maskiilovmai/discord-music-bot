@@ -9,7 +9,7 @@ module.exports = {
             return message.channel.send({
                 embed: {
                     color: 'YELLOW',
-                    author: { name:`You're not in a voice channel !` },
+                    author: { name:`Bạn không có ở trong kênh thoại !` },
                     timestamp: new Date(),
                 },
             });
@@ -19,7 +19,7 @@ module.exports = {
             return message.channel.send({
                 embed: {
                     color: 'YELLOW',
-                    author: { name: `You are not in the same voice channel ! Ba-Baka ! ! !` },
+                    author: { name: `Bạn không có ở trong cùng kênh thoại !` },
                     timestamp: new Date(),
                 },
             });
@@ -29,7 +29,7 @@ module.exports = {
             return message.channel.send({
                 embed: {
                     color: 'YELLOW',
-                    author: { name: `No music currently playing ! Ba-Baka ! ! !` },
+                    author: { name: `Hiện tại không có bài hát đang phát !` },
                     timestamp: new Date(),
                 },
             });
@@ -41,7 +41,7 @@ module.exports = {
                 return message.channel.send({
                     embed: {
                         color: 'BLUE',
-                        author: { name: `Repeat mode disabled !` },
+                        author: { name: `Chế độ lặp lại tất cả đã vô hiệu hóa !` },
                         timestamp: new Date(),
                     },
                 });
@@ -50,7 +50,7 @@ module.exports = {
                 return message.channel.send({
                     embed: {
                         color: 'BLUE',
-                        author: { name: `Repeat mode enabled the whole queue will be repeated endlessly !` },
+                        author: { name: `Chế độ lặp lại tất cả đã được bật, toàn bộ hàng chờ sẽ được lặp lại liên tục ! !` },
                         timestamp: new Date(),
                     },
                 }); 
@@ -61,7 +61,7 @@ module.exports = {
                 return message.channel.send({
                     embed: {
                         color: 'BLUE',
-                        author: { name: `Repeat disabled !` },
+                        author: { name: `Lặp lại đơn bài hát đã vô hiệu hóa !` },
                         timestamp: new Date(),
                     },
                 });             
@@ -70,7 +70,7 @@ module.exports = {
                 return message.channel.send({
                     embed: {
                         color: 'BLUE',
-                        author: { name: `Repeat enabled the current music will be repeated endlessly !` },
+                        author: { name: `Chế độ lặp lại đã được bật, bài hát hiện tại sẽ được lặp lại liên tục !` },
                         timestamp: new Date(),
                     },
                 }); 

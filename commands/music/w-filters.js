@@ -5,11 +5,11 @@ module.exports = {
     utilisation: '{prefix}w-filters',
 
     execute(client, message) {
-        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel !`);
+        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - Bạn không có trong kênh thoại !`);
 
-        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - You are not in the same voice channel !`);
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - Bạn không có trong cùng kênh thoại !`);
 
-        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - No music currently playing !`);
+        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - Hiện tại không có bài hát đang phát !`);
 
         const filtersStatuses = [[], []];
 
@@ -21,13 +21,13 @@ module.exports = {
         message.channel.send({
             embed: {
                 color: 'ORANGE',
-                footer: { text: 'This bot is used as a free to use playing music bot' },
+                //footer: { text: 'This bot is used as a free to use playing music bot' }, //If you want footer, just delete "//"
                 fields: [
                     { name: 'Filters', value: filtersStatuses[0].join('\n'), inline: true },
                     { name: '** **', value: filtersStatuses[1].join('\n'), inline: true },
                 ],
                 timestamp: new Date(),
-                description: `List of all filters enabled or disabled.\nUse \`${client.config.discord.prefix}filter\` to add a filter to a song.`,
+                description: `Danh sách các Filter được bật hoặt tắt.\nDùng \`${client.config.discord.prefix}filter\` để thêm filter vào bài hát.`,
             },
         });
     },

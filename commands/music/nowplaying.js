@@ -5,11 +5,11 @@ module.exports = {
     utilisation: '{prefix}nowplaying',
 
     execute(client, message) {
-        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel !`);
+        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - Bạn không có trong kênh thoại !`);
 
-        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - You are not in the same voice channel !`);
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - Bạn không có trong cùng kênh thoại !`);
 
-        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - No music currently playing !`);
+        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - Hiện tại không có bài hát đang phát !`);
 
         const track = client.player.nowPlaying(message);
         const filters = [];
@@ -19,22 +19,23 @@ module.exports = {
         message.channel.send({
             embed: {
                 color: 'BLUE',
-                author: { name: track.title },
-                footer: { text: 'This bot is used as a free to use playing music bot' },
+                author: { name: `Thông tin về bài hát hiện tại` },
+                description: "**Bài hát:** ["+track.title+"]("+track.url+")",
+                //footer: { text: 'This bot is used as a free to use playing music bot' }, //If you want footer, just delete "//"
                 fields: [
-                    { name: 'Channel', value: track.author, inline: true },
-                    { name: 'Requested by', value: track.requestedBy.username, inline: true },
-                    { name: 'From playlist', value: track.fromPlaylist ? 'Yes' : 'No', inline: true },
+                    { name: 'Kênh', value: track.author, inline: true },
+                    { name: 'Yêu cầu bởi', value: track.requestedBy.username, inline: true },
+                    { name: 'Từ danh sách', value: track.fromPlaylist ? 'Có' : 'Không', inline: true },
 
-                    { name: 'Views', value: track.views, inline: true },
-                    { name: 'Duration', value: track.duration, inline: true },
-                    { name: 'Filters activated', value: filters.length + '/' + client.filters.length, inline: true },
+                    { name: 'Lượt xem', value: track.views, inline: true },
+                    { name: 'Thời lượng', value: track.duration, inline: true },
+                    { name: 'Filter đã kích hoạt', value: filters.length + '/' + client.filters.length, inline: true },
 
-                    { name: 'Volume', value: client.player.getQueue(message).volume, inline: true },
-                    { name: 'Repeat mode', value: client.player.getQueue(message).repeatMode ? 'Yes' : 'No', inline: true },
-                    { name: 'Currently paused', value: client.player.getQueue(message).paused ? 'Yes' : 'No', inline: true },
+                    { name: 'Âm lượng', value: client.player.getQueue(message).volume, inline: true },
+                    { name: 'Chế độ lặp lại', value: client.player.getQueue(message).repeatMode ? 'Có' : 'Không', inline: true },
+                    { name: 'Đã tạm dừng', value: client.player.getQueue(message).paused ? 'Có' : 'Không', inline: true },
 
-                    { name: 'Progress bar', value: client.player.createProgressBar(message, { timecodes: true }), inline: true }
+                    { name: 'Thanh tiến trình', value: client.player.createProgressBar(message, { timecodes: true }), inline: true }
                 ],
                 thumbnail: { url: track.thumbnail },
                 timestamp: new Date(),

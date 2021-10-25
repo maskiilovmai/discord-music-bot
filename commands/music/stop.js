@@ -5,15 +5,15 @@ module.exports = {
     utilisation: '{prefix}stop',
 
     execute(client, message) {
-        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel !`);
+        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - Bạn không có trong kênh thoại !`);
 
-        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - You are not in the same voice channel !`);
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - Bạn không có trong cùng kênh thoại !`);
 
-        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - No music currently playing !`);
+        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - Hiện tại không có bài hát đang phát !`);
 
         client.player.setRepeatMode(message, false);
         const success = client.player.stop(message);
 
-        if (success) message.channel.send(`${client.emotes.success} - Music **stopped** into this server !`);
+        if (success) message.channel.send(`${client.emotes.success} - Bài hát **ĐÃ DỪNG LẠI** trên máy chủ này !`);
     },
 };

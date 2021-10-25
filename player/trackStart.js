@@ -6,12 +6,16 @@ module.exports = (client, message, track) => {
 	embed = message.channel.send({
 		embed: {
 			color: 'BLUE',
-			author: { name: `Playing: ${track.title} in channel: ${message.member.voice.channel.name}` },
-			footer: { text: 'This bot is used as a free to use playing music bot' },
-				
-			timestamp: new Date(),
-			description: 'Duration: ' + track.duration + " minutes, requested by: " + track.requestedBy.username,
-			thumbnail: { url: track.thumbnail },
+            author: { name: `Phát nhạc trong kênh: ${message.member.voice.channel.name}` },
+            description: "**Bài hát:** ["+track.title+"]("+track.url+")",
+			//footer: { text: 'Sakura được hoạt động với vai trò là BOT phát nhạc miễn phí theo yêu cầu của người dùng' }, //If you want footer, just delete "//"
+			
+            fields: [
+                { name: 'Thời lượng', value: track.duration + " phút", inline: true },
+                { name: 'Yêu cầu bởi', value: track.requestedBy.username, inline: true },
+             ],
+            thumbnail: { url: track.thumbnail },
+            timestamp: new Date(),
 		},
 	});
 

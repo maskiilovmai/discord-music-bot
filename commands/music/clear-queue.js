@@ -5,16 +5,16 @@ module.exports = {
     utilisation: '{prefix}clear',
 
     execute(client, message) {
-        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - You're not in a voice channel !`);
+        if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - Bạn không có trong kênh thoại !`);
 
-        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - You are not in the same voice channel !`);
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${client.emotes.error} - Bạn không có trong cùng kênh thoại !`);
 
-        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - No music currently playing !`);
+        if (!client.player.getQueue(message)) return message.channel.send(`${client.emotes.error} - Hiện tại không có bài hát đang phát !`);
 
-        if (client.player.getQueue(message).tracks.length <= 1) return message.channel.send(`${client.emotes.error} - There is only one song in the queue.`);
+        if (client.player.getQueue(message).tracks.length <= 1) return message.channel.send(`${client.emotes.error} - Hàng chờ hiện tại không có bài hát.`);
 
         client.player.clearQueue(message);
 
-        message.channel.send(`${client.emotes.success} - The queue has just been **removed** !`);
+        message.channel.send(`${client.emotes.success} - Hàng chờ **ĐÃ LOẠI BỎ** !`);
     },
 };
