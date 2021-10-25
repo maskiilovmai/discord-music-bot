@@ -6,7 +6,7 @@ const client = new discord.Client({ disableMentions: 'everyone' });
 const { Player } = require('discord-player');
 
 client.player = new Player(client);
-client.config = require('./config');
+client.config = require('./config/bot');
 client.emotes = client.config.emojis;
 client.filters = client.config.filters;
 client.commands = new discord.Collection();
@@ -40,13 +40,13 @@ client.login(client.config.discord.token);
 
 //Join and leave
 client.on('message', function(message) {
-    if (message.content === '[prefix]join') {
+    if (message.content === 'sc!join') {
         if(!message.member.voice.channel) return message.channel.send("Please connect to a voice channel!"); //If you are not in the voice channel, then return a message
 
         message.member.voice.channel.join(); //Join the voice channel
     }
 
-    if (message.content === '[prefix]leave') {
+    if (message.content === 'sc!leave') {
         if(!message.member.voice.channel) return; //u cant try disconnect without entering a vc
 
         message.member.voice.channel.leave(); //Leave the voice channel
