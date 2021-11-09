@@ -11,7 +11,10 @@ module.exports = (client, message, track) => {
 			//footer: { text: 'Sakura được hoạt động với vai trò là BOT phát nhạc miễn phí theo yêu cầu của người dùng' }, //If you want footer, just delete "//"
 			
             fields: [
+                { name: 'Kênh', value: track.author, inline: true },
                 { name: 'Thời lượng', value: track.duration + " phút", inline: true },
+
+                { name: 'Lượt xem', value: track.views, inline: true },
                 { name: 'Yêu cầu bởi', value: track.requestedBy.username, inline: true },
              ],
             thumbnail: { url: track.thumbnail },

@@ -10,7 +10,7 @@ module.exports = {
     discord: {
         token: 'TOKEN-BOT',
         prefix: 'prefix',
-        activity: 'Nhập [prefix]help để hỗ trợ',
+        activity: `Nhập ${prefix}help để hỗ trợ`,
     },
 
     filters: ['8D', 'gate', 'haas', 'phaser', 'treble', 'tremolo', 'vibrato', 'reverse', 'karaoke', 'flanger', 'mcompand', 'pulsator', 'subboost', 'bassboost', 'vaporwave', 'nightcore', 'normalizer', 'surrounding'],
