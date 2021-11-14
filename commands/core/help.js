@@ -30,7 +30,7 @@ module.exports = {
 
             message.channel.send({
                 embed: {
-                    color: 'BLUE',
+                    color: 'RANDOM',
                     author: { name: 'Help pannel - Bảng hỗ trợ' },
                     //footer: { text: 'This bot is used as a free to use playing music bot' }, //If you want footer, just delete "//"
                     fields: [
