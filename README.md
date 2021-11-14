@@ -27,6 +27,19 @@ help, see the list of available commands.
 debug, see number of voice connections.
 ```
 
+### Setup
+1. Colone this:
+```sh
+git clone https://github.com/maskiilovmai/discord-music-bot.git
+```
+2. Using command in terminal:
+```sh
+npm install --save discord-player
+npm install --save @discordjs/opus
+```
+3. Configuration bot
+4. Run bot and enjoy
+
 ### 🏓 Utilities (to change the code)
 
 Find all the functions available on the official code [right here](https://github.com/Androz2091/discord-player).
