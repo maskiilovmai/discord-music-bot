@@ -1,7 +1,7 @@
 module.exports = (client, message, queue, track) => {
     message.channel.send({
         embed: {
-            color: 'BLUE',
+            color: 'RANDOM',
             author: { name: `Đã thêm bài hát mới vào hàng chờ`},
             description: "**Bài hát:** ["+track.title+"]("+track.url+")",
 			//footer: { text: 'Sakura được hoạt động với vai trò là BOT phát nhạc miễn phí theo yêu cầu của người dùng' }, //If you want footer, just delete "//"

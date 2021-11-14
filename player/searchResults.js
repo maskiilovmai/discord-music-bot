@@ -1,7 +1,7 @@
 module.exports = (client, message, query, tracks) => {
     message.channel.send({
         embed: {
-            color: 'BLUE',
+            color: 'RANDOM',
             author: { name: `Đây là kết quả tìm kiếm cho ${query}` },
             //footer: { text: 'This bot is used as a free to use playing music bot' }, //If you want footer, just delete "//"
             timestamp: new Date(),

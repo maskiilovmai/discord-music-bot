@@ -5,7 +5,7 @@ function sleep(ms) {
 module.exports = (client, message, track) => {	
 	embed = message.channel.send({
 		embed: {
-			color: 'BLUE',
+			color: 'RANDOM',
             author: { name: `Phát nhạc trong kênh: ${message.member.voice.channel.name}` },
             description: "**Bài hát:** ["+track.title+"]("+track.url+")",
 			//footer: { text: 'Sakura được hoạt động với vai trò là BOT phát nhạc miễn phí theo yêu cầu của người dùng' }, //If you want footer, just delete "//"

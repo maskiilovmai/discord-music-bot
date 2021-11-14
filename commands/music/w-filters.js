@@ -20,7 +20,7 @@ module.exports = {
 
         message.channel.send({
             embed: {
-                color: 'ORANGE',
+                color: 'RANDOM',
                 //footer: { text: 'This bot is used as a free to use playing music bot' }, //If you want footer, just delete "//"
                 fields: [
                     { name: 'Filters', value: filtersStatuses[0].join('\n'), inline: true },

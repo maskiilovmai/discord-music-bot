@@ -18,7 +18,7 @@ module.exports = {
 
         message.channel.send({
             embed: {
-                color: 'BLUE',
+                color: 'RANDOM',
                 author: { name: `Thông tin về bài hát hiện tại` },
                 description: "**Bài hát:** ["+track.title+"]("+track.url+")",
                 //footer: { text: 'This bot is used as a free to use playing music bot' }, //If you want footer, just delete "//"

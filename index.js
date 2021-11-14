@@ -39,16 +39,16 @@ for (const file of player) {
 client.login(client.config.discord.token);
 
 //Join and leave
-client.on('message', function(message) {
-    if (message.content === '[prefix]join') {
-        if(!message.member.voice.channel) return message.channel.send("Please connect to a voice channel!"); //If you are not in the voice channel, then return a message
+// client.on('message', function(message) {
+//     if (message.content === '[prefix]join') {
+//         if(!message.member.voice.channel) return message.channel.send("Please connect to a voice channel!"); //If you are not in the voice channel, then return a message
 
-        message.member.voice.channel.join(); //Join the voice channel
-    }
+//         message.member.voice.channel.join(); //Join the voice channel
+//     }
 
-    if (message.content === '[prefix]leave') {
-        if(!message.member.voice.channel) return; //u cant try disconnect without entering a vc
+//     if (message.content === '[prefix]leave') {
+//         if(!message.member.voice.channel) return; //u cant try disconnect without entering a vc
 
-        message.member.voice.channel.leave(); //Leave the voice channel
-    }
-});
+//         message.member.voice.channel.leave(); //Leave the voice channel
+//     }
+// });
